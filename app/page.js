@@ -392,43 +392,7 @@ export default function Home() {
               From Hobart to Launceston, Devonport to the East Coast — if it's in Tassie, we can get there.
             </p>
           </div>
-          <div className="row g-4 align-items-center">
-            <div className="col-lg-6">
-              <div className="map-visual">
-                <i className="map-icon bi bi-map" />
-                <div className="map-label" style={{ top: '65%', left: '46%' }}><div className="map-dot" /> Greater Hobart</div>
-                <div className="map-label" style={{ top: '35%', left: '55%' }}><div className="map-dot" /> Northern Tas</div>
-                <div className="map-label" style={{ top: '24%', left: '39%' }}><div className="map-dot" /> North-West Coast</div>
-                <div className="map-label" style={{ top: '55%', left: '65%' }}><div className="map-dot" /> Huon & D'Entrecasteaux</div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <h4 className="heading-font fw-bold mb-3" style={{ color: 'var(--white)' }}>Delivery Areas</h4>
-              <div></div>
-              <ul className="area-list list-unstyled">
-                <li className="area-item"><i className="bi bi-geo-alt" />Hobart</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Glenorchy</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Kingston</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Huonville</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Launceston</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Devonport</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Burnie</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Ulverstone</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Sorell</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Richmond</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />New Norfolk</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Bicheno</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />St Helens</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Deloraine</li>
-                <li className="area-item"><i className="bi bi-geo-alt" />Scottsdale</li>
-              </ul>
-              <p className="text-white small mt-3 mb-0">
-                <i className="bi bi-info-circle me-1" style={{ color: 'var(--white)' }} />
-                Don't see your area? <a href="tel:1300000000" style={{ color: 'var(--green-dark)', fontWeight: 600 }}>Call us</a> — we often deliver to
-                surrounding areas too.
-              </p>
-            </div>
-          </div>
+          <CoverageCity  />
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+"use client";
 import React, { useMemo, useState } from "react";
 
 const deliveryData = [
@@ -99,13 +100,16 @@ export default function DeliveryAreas() {
         </h4>
 
         {/* SEARCH INPUT */}
-        <input
-          type="text"
-          className="form-control mb-4"
-          placeholder="Search city..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <div className="serachField">
+            <img src="/images/search.png" alt="Search" />
+            <input
+            type="text"
+            className="form-control mb-4"
+            placeholder="Search city..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            />
+        </div>
 
         {/* AREA LIST */}
         <ul className="area-list list-unstyled">

@@ -1034,6 +1034,8 @@ a:hover{
       padding: 2px 6px;
       display: flex;
       gap: 5px;
+      z-index: 1;
+      cursor: pointer;
     }
     .map-icon { font-size: 6rem; color: var(--blue-dark); opacity: .15; position: relative; z-index: 1; }
     .map-dot:after {
@@ -1071,6 +1073,26 @@ a:hover{
             -webkit-box-shadow: 0 0 0 0 rgba(244, 68, 56, .0);
                     box-shadow: 0 0 0 0 rgba(244, 68, 56, .0);
         }
+    }
+
+    .serachField {
+        position: relative;
+    }
+
+    .serachField img {
+        position: absolute;
+        left: 10px;
+        top: 0;
+        max-width: 26px;
+        bottom: 0;
+        margin: auto;
+    }
+
+    .serachField input {
+        border-radius: 6px;
+        padding: 12px 45px;
+        outline: 0 !important;
+        box-shadow: none !important;
     }
  
     /* ── What Goes In ── */
