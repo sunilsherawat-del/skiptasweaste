@@ -13,6 +13,11 @@ import LocallTeam from "../public/Images/choose_list_img3.png";
 import EcoFriendly from "../public/Images/choose_list_img2.png";
 import BookOnline from "../public/Images/choose_list_img1.png";
 import CoverageCity from './components/CoverageArea/CoverageCity';
+import BlogSwiper from './components/Blog/BlogSwiper';
+import FaqSection from './components/Faq/Faq';
+import FooterCta from './components/FooterCta/FooterCta';
+import FooterSection from './components/Footer/FooterSection';
+import { Overlay } from 'react-bootstrap';
 
 export default function Home() {
   return (
@@ -90,7 +95,7 @@ export default function Home() {
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">2m³</div>
-                  <i className="bi bi-trash3" />
+                  <img src='../images/skipbin_img.png' alt='image' />
                 </div>
                 <div className="bin-card-body">
                   <div className="bin-name">Small Clean-Up</div>
@@ -109,7 +114,7 @@ export default function Home() {
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">3m³</div>
-                  <i className="bi bi-trash3" />
+                  <img src='../images/skipbin_img.png' alt='image' />
                 </div>
                 <div className="bin-card-body">
                   <div className="bin-name">Garage Tip</div>
@@ -129,9 +134,9 @@ export default function Home() {
                 <div className="position-absolute top-0 end-0 m-2 tag-index">
                   <span className="tag-pill tag-red"><i className="bi bi-star-fill me-1" />Most Popular</span>
                 </div>
-                <div className="bin-card-img" style={{ background: 'linear-gradient(135deg,#c8f0dc,#b8e4f4)' }}>
+                <div className="bin-card-img" style={{ background: '#ffecba' }}>
                   <div className="bin-size-badge">4m³</div>
-                  <i className="bi bi-trash3" />
+                  <img src='../images/skipbin_img.png' alt='image' />
                 </div>
                 <div className="bin-card-body">
                   <div className="bin-name">Standard Skip</div>
@@ -150,7 +155,7 @@ export default function Home() {
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">6m³</div>
-                  <i className="bi bi-trash3" />
+                  <img src='../images/skipbin_img.png' alt='image' />
                 </div>
                 <div className="bin-card-body">
                   <div className="bin-name">Large Bin</div>
@@ -169,7 +174,7 @@ export default function Home() {
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">8m³</div>
-                  <i className="bi bi-trash3" />
+                  <img src='../images/skipbin_img.png' alt='image' />
                 </div>
                 <div className="bin-card-body">
                   <div className="bin-name">XL Bin</div>
@@ -188,7 +193,7 @@ export default function Home() {
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">10m³</div>
-                  <i className="bi bi-trash3" />
+                  <img src='../images/skipbin_img.png' alt='image' />
                 </div>
                 <div className="bin-card-body">
                   <div className="bin-name">Maxi Bin</div>
@@ -383,7 +388,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="map-section" id="delivery">
+      <section className="map-section" style={{ background: 'rgb(0 0 0 / 60%) url(../images/acrossCity.jpg) no-repeat center center / cover', backgroundAttachment: 'fixed', backgroundBlendMode: 'Overlay',}}>
         <div className="container">
           <div className="text-center mb-5">
             <div className="section-label text-white">Coverage</div>
@@ -395,6 +400,88 @@ export default function Home() {
           <CoverageCity  />
         </div>
       </section>
+
+      <section className="waste-section" id="waste">
+        <div className="container">
+          <div className="text-center">
+            <div className="section-label">Accepted Waste</div>
+            <h2 className="section-title mt-1">What Goes In the Skip?</h2>
+            <p className="text-muted mx-auto" style={{ maxWidth: 520 }}>
+              We accept most household and commercial waste. Some items need special arrangements — check below.
+            </p>
+            <img src='../images/bins-category.png' alt='img' className='wasteCategory mt-md-4'  />
+          </div>
+          <div className="row g-4">
+            <div className="col-md-4">
+              <div className="waste-col-title green">
+                <i className="bi bi-check-circle-fill" /> Generally Accepted
+              </div>
+              <ul className="waste-list list-unstyled">
+                <li><i className="bi bi-check-circle-fill ok" />General household rubbish</li>
+                <li><i className="bi bi-check-circle-fill ok" />Green waste &amp; garden waste</li>
+                <li><i className="bi bi-check-circle-fill ok" />Timber &amp; wood</li>
+                <li><i className="bi bi-check-circle-fill ok" />Furniture &amp; whitegoods</li>
+                <li><i className="bi bi-check-circle-fill ok" />Building &amp; demolition waste</li>
+                <li><i className="bi bi-check-circle-fill ok" />Cardboard &amp; paper</li>
+                <li><i className="bi bi-check-circle-fill ok" />Metal &amp; scrap</li>
+                <li><i className="bi bi-check-circle-fill ok" />Soil &amp; sand (heavy bins)</li>
+              </ul>
+            </div>
+            {/* Conditional */}
+            <div className="col-md-4">
+              <div className="waste-col-title blue">
+                <i className="bi bi-exclamation-circle-fill" /> Check With Us First
+              </div>
+              <ul className="waste-list list-unstyled">
+                <li><i className="bi bi-exclamation-triangle-fill maybe" />Tyres (surcharge may apply)</li>
+                <li><i className="bi bi-exclamation-triangle-fill maybe" />Electronics &amp; e-waste</li>
+                <li><i className="bi bi-exclamation-triangle-fill maybe" />Mattresses (fee applies)</li>
+                <li><i className="bi bi-exclamation-triangle-fill maybe" />Plasterboard (segregated)</li>
+                <li><i className="bi bi-exclamation-triangle-fill maybe" />Commercial food waste</li>
+                <li><i className="bi bi-exclamation-triangle-fill maybe" />Light excavation materials</li>
+              </ul>
+            </div>
+            {/* Not Accepted */}
+            <div className="col-md-4">
+              <div className="waste-col-title red">
+                <i className="bi bi-x-circle-fill" /> Not Accepted
+              </div>
+              <ul className="waste-list list-unstyled">
+                <li><i className="bi bi-x-circle-fill no" />Asbestos</li>
+                <li><i className="bi bi-x-circle-fill no" />Liquid waste or oils</li>
+                <li><i className="bi bi-x-circle-fill no" />Hazardous chemicals</li>
+                <li><i className="bi bi-x-circle-fill no" />Paint in large quantities</li>
+                <li><i className="bi bi-x-circle-fill no" />Gas cylinders</li>
+                <li><i className="bi bi-x-circle-fill no" />Medical / biological waste</li>
+                <li><i className="bi bi-x-circle-fill no" />Batteries (large)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="blog-section">
+        <div className="container">
+          <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+              <div className="section-label">Article</div>
+              <h2 className="section-title mt-1">Latest Blog &amp; News</h2>
+            </div>
+            <a href="#" className="theme-btn btn-outline-green">View All <i className="bi bi-arrow-right ms-1" /></a>
+          </div>
+          <div className="row g-4">
+            <div className="col-md-12">
+              <BlogSwiper  />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FaqSection  />
+
+      <FooterCta  />
+
+      <FooterSection  />
 
     </div>
   </div>
