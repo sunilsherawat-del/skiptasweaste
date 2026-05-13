@@ -16,7 +16,7 @@ export default function Faq() {
                           <h3 className="text-white">Still have a questions?</h3>
                           <p className="text-white">Can't find the answer to your question? Send us an email and we'll get back to you as soon as possible!</p>
                           <a href="#" className="theme-btn bg-white btn rounded-3 mt-4">Chat with us</a>
-                          <img src="../images/faqImg.png" alt="img" className="img-fluid" />
+                          <img src="../images/faqIcon.gif" alt="img" className="img-fluid" />
                       </div>
                   </div>
                   <div className="col-12 col-lg-6">

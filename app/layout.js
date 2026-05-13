@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "bootstrap-icons/font/bootstrap-icons.css"
-import "../public/style.css"
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "../public/style.css";
+import "../public/responsive.css";
 
 export const metadata = {
   title: "Skip Bin Taswaste",

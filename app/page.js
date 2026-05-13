@@ -1,5 +1,9 @@
+"use client";
+import { useEffect, useState } from "react";
 import Header from './components/Header/Header';
+import Typewriter from './components/Typewriter/Typewriter';
 import SkipBinBooking from './components/BookingForm/SkipBinBooking';
+import Counter from './components/CounterStrip/Counter';
 import Image from "next/image";
 import ChooseImg from "../public/Images/chooseImg.webp";
 import mapIcon from "../public/Images/map.png";
@@ -16,68 +20,68 @@ import CoverageCity from './components/CoverageArea/CoverageCity';
 import BlogSwiper from './components/Blog/BlogSwiper';
 import FaqSection from './components/Faq/Faq';
 import FooterCta from './components/FooterCta/FooterCta';
-import FooterSection from './components/Footer/FooterSection';
-import { Overlay } from 'react-bootstrap';
+import Footer from './components/Footer/Footer';
+
 
 export default function Home() {
+
+  const [scrollY, setScrollY] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Animation values
+  const scale = 1.05 + scrollY * 0.0005;
+  const opacity = Math.max(0.15, 0.2 - scrollY * 0.0004);
+
   return (
   <div className="pageContent">
     <Header />
     <div className='pageWraper'>
-      <section className="hero" id="home">
-        <div className="container position-relative">
+      <section className="hero bannerSection" id="home">
+        <div
+            className="BgOverlay"
+            style={{
+              transform: `scale(${scale})`,
+              opacity: opacity,
+            }}
+          />
+        <div className="container position-relative z-index">
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
               <div className="hero-badge"><i className="bi bi-award-fill me-1" /> Tasmania's #1 Skip Bin Provider</div>
-              <h1>Skip Bin Hire<br /><span>Made Simple</span> in Tasmania</h1>
+              <h1>Skip Bin Hire<br /> Made Simple <Typewriter /></h1>
               <p className="lead">Affordable, reliable, and eco-friendly skip bin hire for homes, tradies, and
                 businesses across the Apple Isle.</p>
               <div className="d-flex gap-3 flex-wrap">
                 <a href="#bins" className="theme-btn rounded-3">
                   Choose a Bin <i className="bi bi-arrow-down ms-1" />
                 </a>
-                <a href="#how" className="theme-btn btn-outline-green text-white">
+                <a href="#how" className="theme-btn bg-white rounded-3">
                   <i className="bi bi-play-circle me-1" /> How It Works
                 </a>
-              </div>
+              </div> 
             </div>
             <div className="col-lg-6" id="booking">
               <SkipBinBooking />
             </div>
           </div>
         </div>
+        <div className="truck-animation">
+            <img className="truckIcon" src="/Images/garbage-truck.png" alt="truck" />
+            {/* <img className="trashBag" src="/Images/trash-bag.png" alt="truck" /> */}
+        </div>
       </section>
     
-      <div className="stats-strip">
-        <div className="container">
-          <div className="row g-0">
-            <div className="col-6 col-md-3">
-              <div className="stat-item">
-                <div className="stat-value">12,400+</div>
-                <div className="stat-label">Happy Customers</div>
-              </div>
-            </div>
-            <div className="col-6 col-md-3">
-              <div className="stat-item">
-                <div className="stat-value">4.9 ★</div>
-                <div className="stat-label">Google Rating</div>
-              </div>
-            </div>
-            <div className="col-6 col-md-3">
-              <div className="stat-item">
-                <div className="stat-value">78%</div>
-                <div className="stat-label">Waste Recycled</div>
-              </div>
-            </div>
-            <div className="col-6 col-md-3">
-              <div className="stat-item">
-                <div className="stat-value">60min</div>
-                <div className="stat-label">Avg Response Time</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Counter />
 
       <section className="bins-section" id="bins">
         <div className="container">
@@ -91,7 +95,7 @@ export default function Home() {
           </div>
           <div className="row g-4">
             {/* Bin 1 */}
-            <div className="col-sm-6 col-lg-4">
+            <div className="col-sm-6 col-lg-4 col-xl-3">
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">2m³</div>
@@ -110,7 +114,7 @@ export default function Home() {
               </div>
             </div>
             {/* Bin 2 */}
-            <div className="col-sm-6 col-lg-4">
+            <div className="col-sm-6 col-lg-4 col-xl-3">
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">3m³</div>
@@ -129,7 +133,7 @@ export default function Home() {
               </div>
             </div>
             {/* Bin 3 – Featured */}
-            <div className="col-sm-6 col-lg-4">
+            <div className="col-sm-6 col-lg-4 col-xl-3">
               <div className="bin-card featured position-relative">
                 <div className="position-absolute top-0 end-0 m-2 tag-index">
                   <span className="tag-pill tag-red"><i className="bi bi-star-fill me-1" />Most Popular</span>
@@ -151,7 +155,7 @@ export default function Home() {
               </div>
             </div>
             {/* Bin 4 */}
-            <div className="col-sm-6 col-lg-4">
+            <div className="col-sm-6 col-lg-4 col-xl-3">
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">6m³</div>
@@ -170,7 +174,7 @@ export default function Home() {
               </div>
             </div>
             {/* Bin 5 */}
-            <div className="col-sm-6 col-lg-4">
+            <div className="col-sm-6 col-lg-4 col-xl-3">
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">8m³</div>
@@ -189,7 +193,45 @@ export default function Home() {
               </div>
             </div>
             {/* Bin 6 */}
-            <div className="col-sm-6 col-lg-4">
+            <div className="col-sm-6 col-lg-4 col-xl-3">
+              <div className="bin-card">
+                <div className="bin-card-img">
+                  <div className="bin-size-badge">10m³</div>
+                  <img src='../images/skipbin_img.png' alt='image' />
+                </div>
+                <div className="bin-card-body">
+                  <div className="bin-name">Maxi Bin</div>
+                  <div className="bin-desc">Maximum capacity for industrial &amp; demolition</div>
+                  <div className="bin-price">$545 <span>inc. GST</span></div>
+                  <div className="bin-specs">
+                    <i className="bi bi-rulers" />4.6m L × 1.5m W × 2.0m H&nbsp;&nbsp;
+                    <i className="bi bi-clock" /> 3–14 day hire
+                  </div>
+                  <a href="#booking" className="theme-btn rounded-3 justify-content-center btn-sm w-100">Book Now</a>
+                </div>
+              </div>
+            </div>
+            {/* Bin 7 */}
+            <div className="col-sm-6 col-lg-4 col-xl-3">
+              <div className="bin-card">
+                <div className="bin-card-img">
+                  <div className="bin-size-badge">10m³</div>
+                  <img src='../images/skipbin_img.png' alt='image' />
+                </div>
+                <div className="bin-card-body">
+                  <div className="bin-name">Maxi Bin</div>
+                  <div className="bin-desc">Maximum capacity for industrial &amp; demolition</div>
+                  <div className="bin-price">$545 <span>inc. GST</span></div>
+                  <div className="bin-specs">
+                    <i className="bi bi-rulers" />4.6m L × 1.5m W × 2.0m H&nbsp;&nbsp;
+                    <i className="bi bi-clock" /> 3–14 day hire
+                  </div>
+                  <a href="#booking" className="theme-btn rounded-3 justify-content-center btn-sm w-100">Book Now</a>
+                </div>
+              </div>
+            </div>
+            {/* Bin 8 */}
+            <div className="col-sm-6 col-lg-4 col-xl-3">
               <div className="bin-card">
                 <div className="bin-card-img">
                   <div className="bin-size-badge">10m³</div>
@@ -208,13 +250,6 @@ export default function Home() {
               </div>
             </div>
           </div>{/* /row */}
-          <div className="text-center mt-4">
-            <p className="text-muted small mb-0">
-              <i className="bi bi-info-circle me-1" style={{ color: 'var(--blue-primary)' }} />
-              Not sure which size? <a href="tel:1300000000" style={{ color: 'var(--green-dark)', fontWeight: 600 }}>Call
-                us</a> — we'll help you choose the right bin.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -481,7 +516,7 @@ export default function Home() {
 
       <FooterCta  />
 
-      <FooterSection  />
+      <Footer  />
 
     </div>
   </div>

@@ -40,7 +40,7 @@ h5,
     font-family: "Barlow Condensed", sans-serif;
     text-transform: uppercase;
 }
-a{
+a, .btn, .theme-btn{
     transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -50,7 +50,7 @@ a{
     color: #000;
     text-decoration:none;
 }
-a:hover{
+a:hover, .btn:hover, .theme-btn:hover{
     outline:none;
     color:#1d1d1d;
     text-decoration:none;
@@ -261,17 +261,30 @@ a:hover{
     }
     .btn-blue:hover { background: var(--blue-dark); color: #fff; }
  
-    .btn-outline-green {
-      border: 2px solid var(--blue-primary);
-      color: var(--blue-primary);
-      background: transparent;
-      font-weight: 700;
-      border-radius: 6px;
-      transition: all .2s;
+    .btn-outline-green{
+      border:2px solid var(--blue-primary);
+      color:var(--blue-primary);
+      background:transparent;
+      font-weight:700;
+      border-radius:6px;
+      transition:all .2s;
     }
-    .btn-outline-green:hover {
-      background: var(--blue-primary) !important;
-      color: #fff;
+    .btn-outline-green:hover{
+      background:var(--blue-primary) !important;
+      color:#fff;
+    }
+
+    .btn-outline-orange{
+      border:2px solid #ff6d2e;
+      color:#ff6d2e;
+      background:transparent;
+      font-weight:700;
+      border-radius:6px;
+      transition:all .2s;
+    }
+    .btn-outline-orange:hover{
+      background:#ff6d2e !important;
+      color:#fff;
     }
  
     .section-label {
@@ -303,7 +316,7 @@ a:hover{
     /*header css*/
     .header-overlay{
         position:absolute;
-        top:0;
+        top:12;
         left:0;
         right:0;
         z-index:1;
@@ -324,8 +337,8 @@ a:hover{
         font-weight:400;
         font-size:16px;
         line-height:normal;
-        padding:30px 0;
-        color:#FFFFFF;
+        padding:26px 0;
+        color:#000;
         position:relative;
         padding-left:0 !important;
         padding-right:0 !important;
@@ -343,15 +356,26 @@ a:hover{
     .sab-menu{
         position:relative;
     }
-    .header-overlay + *{
-        padding-top:112px;
+    .header-overlay + .pageWraper .bannerSection{
+        padding-top:110px;
     }
     header:not(.header-overlay) .menu-wrap li a{
         color: #585858;
     }
-    header:not(.header-overlay) .navbar-brand{
+    header .navbar-brand{
         max-height:68px;
         filter:invert(1);
+        padding-left: 12px;
+    }
+    .headerBar {
+        background: #fff;
+        flex-wrap: inherit;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        width: 100%;
+        padding: 0 8px;
+        border-radius: 44px;
     }
     /*sub menu*/
     .sab-menu{
@@ -391,12 +415,27 @@ a:hover{
     
  
     /* ── Hero ── */
-   .hero {
-    background: url(/images/ctaBg_img2.jpg) no-repeat center center / cover, linear-gradient(135deg, #1e7ea1 0%, #1a1a5c 100%) no-repeat center center / cover;
-    padding: 70px 0 80px;
-    position: relative;
-    overflow: hidden;
-    background-blend-mode: overlay;
+.hero{
+    background-blend-mode:overlay;
+    padding:70px 0 100px;
+    position:relative;
+    overflow:hidden;
+    background-color:transparent;
+    background-image:radial-gradient(at top center, #1e7ea1 0%, #04223a 100%);
+}
+.BgOverlay {
+  background: url("/Images/poly-bg-white.svg") no-repeat top center;
+  background-size: 105% auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition:
+    transform 0.1s linear,
+    opacity 0.1s linear;
 }
     .hero-badge {
       background: rgba(255,255,255,.15);
@@ -426,31 +465,56 @@ a:hover{
       max-width: 520px;
       margin-bottom: 28px;
     }
+    .hero::before {
+        content: "";
+        position: absolute;
+        bottom: -80px; left: -80px;
+        width: 400px; height: 400px;
+        border-radius: 50%;
+        background: rgba(90,180,214,.12);
+        -webkit-animation: linear infinite alternate;
+        -webkit-animation-name: animationFramesOne;
+        -webkit-animation-duration: 25s;
+        -ms-animation: linear infinite alternate;
+        -ms-animation-name: animationFramesOne;
+        -ms-animation-duration: 25s;
+        -moz-animation: linear infinite alternate;
+        -moz-animation-name: animationFramesOne;
+        -moz-animation-duration: 25s;
+    }
  
     /* Booking card */
     .book {
-        background: #fff;
+        background: rgb(0 0 0 / 20%);
         border-radius: 18px;
         padding: 28px;
+        backdrop-filter: blur(20px);
     }
-    .stepper {
+    @media screen and (min-width: 992px) {
+    .hero {
+        min-height: 100vh;
         display: flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 22px;
-        flex-wrap: wrap;
     }
-    .stepper__step {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        padding: 10px 12px;
-        border-radius: 6px;
-        border: 1px solid #2c2c2a1a;
-        background: #fff;
-        cursor: pointer;
-        transition: background .15s, border .15s, color .15s;
-        width: 32%;
+    }
+    .stepper{
+        display:flex;
+        align-items:center;
+        gap:8px;
+        margin-bottom:22px;
+        flex-wrap:wrap;
+    }
+    .stepper__step{
+        display:flex;
+        flex-direction:column;
+        gap:6px;
+        padding:10px 12px;
+        border-radius:6px;
+        border:1px solid #2c2c2a1a;
+        background:#e4e4e4;
+        cursor:pointer;
+        transition:background .15s, border .15s, color .15s;
+        width:23.9%;
     }
 
     .stepper__step.is-done{
@@ -459,15 +523,21 @@ a:hover{
         color:#000;
     }
 
-    .stepper__step.is-active{
+    .stepper__step.is-active, .stepper__step.active{
         background:var(--blue-primary);
         border-color:var(--blue-primary);
         color:#fff;
     }
-    .stepper__num{
-        font-size:10px;
-        letter-spacing:.14em;
-        opacity:.8;
+
+     .stepper__step.is-active:has(+ .is-active) {
+        background: var(--blue-mid);
+        border-color: var(--blue-mid);
+        color:#000;
+    }
+
+    .stepper__num {
+        letter-spacing: .1em;
+        font-size: 12px;
     }
     .stepper__label {
         font-weight: 600;
@@ -487,16 +557,19 @@ a:hover{
         background: #ff6d2e;
         transition: width .35s ease;
     }
-    .book__field label {
+    .book__field label{
         display: block;
-        color: #000;
+        color: #e9e9e9;
         text-transform: uppercase;
         font-weight: 600;
         margin-bottom: 8px;
         font-size: 15px;
     }
-    .book_dataBx .form-control{
-        padding: 12px 20px;
+    .book__row span{
+        color: #e9e9e9;
+    }
+    .book__field .form-control{
+        padding: 10px 20px;
         box-shadow: none;
         font-size: 20px;
         border: 1px solid #cdcdcd;
@@ -547,8 +620,9 @@ a:hover{
         font-weight: 600;
         font-size: 15px;
     }
-    .book__chips .chip.is-active, .size-pill.is-active {
-        background: #d3f2ff;
+    .book__chips .chip.is-active, .size-pill.is-active ,  .book__chips .chip.active, .size-pill.active {
+        background: #0078d6;
+        color:#fff;
     }
 
     .size-pill {
@@ -697,6 +771,12 @@ a:hover{
     text-transform: uppercase;
     font-weight: 600;
 }
+.book__summary p {
+    margin-bottom: 5px;
+}
+.book__field .form-control[type="date"] {
+    font-size: 16px;
+}
 
     /*Stats strip*/
     .stats-strip {
@@ -784,11 +864,12 @@ a:hover{
  
     /* ── How It Works ── */
     .how-section {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, #1a1a5c 100%);
+      background: url(/images/themeBg.webp) no-repeat center center / cover;
       color: #fff;
       padding: 80px 0;
       position: relative;
       overflow: hidden;
+      background-attachment: fixed;
     }
     .how-section::before {
       content: "";
@@ -859,6 +940,21 @@ a:hover{
         -webkit-transform: translate(0px, 0px) rotate(0deg);
     }
 }
+
+    .how-section::after {
+        content: "";
+        position: absolute;
+        top:0px; left:0px;
+        width: 100%; height: 100%;
+        background: url(/images/themeBgOverlay.webp) no-repeat center center / cover;
+        background-attachment: fixed;
+        opacity:.6;
+    }
+    .how-section .position-relative {
+        z-index: 1;
+    }
+
+
     .chooseImg img {
         max-height: 545px;
         object-fit: cover;
@@ -916,6 +1012,7 @@ a:hover{
     gap: 16px;
     align-items: center;
     transition: background .15s, border-color .15s;
+    backdrop-filter: blur(20px);
 }
 .rail-step__time{
     font-size: 10px;
@@ -962,7 +1059,7 @@ a:hover{
       position: absolute;
       bottom: 20px;
       right: 20px;
-      background: var(--blue-dark);
+      background:#ff6d2e;
       color: #fff;
       border-radius: 12px;
       padding: 14px 18px;
@@ -973,7 +1070,7 @@ a:hover{
       font-weight: 700;
       line-height: 1;
     }
-    .exp-badge .label{font-size:12px; color:#bbb;}
+    .exp-badge .label{font-size:12px; color:#fff;}
  
     /* ── Delivery Map ── */
     .map-section{background:linear-gradient(135deg, var(--blue-dark) 0%, #1a1a5c 100%); padding:70px 0;}
@@ -1189,7 +1286,7 @@ a:hover{
     }
 
     .theme-btn.btn-sm {
-        padding: 14px 16px;
+        padding: 12px 15px;
     }
  
     /* ── FAQ ── */
@@ -1374,3 +1471,111 @@ a:hover{
     right: -30px;
     top: 25px;
 }
+.cursor {
+  animation: blink 0.8s infinite;
+  color: #000;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.blog-card .blog-img img {
+    transition: all ease .5s;
+    transform: scale(1);
+}
+.blog-card:hover .blog-img img {
+    transition: all ease .5s;
+    transform: scale(.9);
+}
+
+.truck-animation{
+  position: absolute;
+  bottom: 0px;
+  left: -200px;
+  animation: truckMove 14s infinite;
+  pointer-events: none;
+}
+
+.truck-animation .truckIcon{
+  width:150px;
+  animation: bounce 0.8s ease-in-out infinite alternate;
+}
+
+/* Smooth realistic movement */
+@keyframes truckMove {
+
+  /* Fast start */
+  0%{
+    left: -200px;
+  }
+
+  /* Moving normally */
+  30%{
+    left: 40%;
+  }
+  35%{
+    left: 40%;
+  }
+
+  /* Exit screen */
+  100%{
+    left: 110%;
+  }
+}
+
+/* Truck bounce */
+@keyframes bounce{
+  from{
+    transform: translateY(0px);
+  }
+
+  to{
+    transform: translateY(-4px);
+  }
+}
+/* .truck-animation .trashBag {
+  max-width: 60px;
+  position: absolute;
+  left: 80px;
+  margin: auto;
+  top:0;
+  opacity: 0;
+  transform: translateY(-80px) scale(0.6);
+  animation: trashDrop 14s infinite;
+  z-index:-1;
+}
+
+@keyframes trashDrop {
+
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.6);
+  }
+
+  30% {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.6);
+  }
+
+  35% {
+    opacity: 1;
+    transform: translateY(-30px) scale(0.8);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+
+  70% {
+    opacity: 0;
+    transform: translateY(0px) scale(0);
+  }
+
+  100% {
+    opacity: 0;
+  }
+} */
