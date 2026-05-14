@@ -18,7 +18,7 @@ export default function FooterSection() {
                             <a href="#"><i className="bi bi-google" /></a>
                         </div>
                     </div>
-                    <div className="col-sm-4 col-lg-2">
+                    <div className="col-sm-6 col-lg-2">
                         <div className="footer-col-title">Services</div>
                         <ul className="footer-links list-unstyled">
                             <li><a href="#">Skip Bin Hire</a></li>
@@ -28,7 +28,7 @@ export default function FooterSection() {
                             <li><a href="#">Same-Day Delivery</a></li>
                         </ul>
                     </div>
-                    <div className="col-sm-4 col-lg-2">
+                    <div className="col-sm-6 col-lg-2">
                         <div className="footer-col-title">Company</div>
                         <ul className="footer-links list-unstyled">
                             <li><a href="#">About Us</a></li>
@@ -38,7 +38,7 @@ export default function FooterSection() {
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
-                    <div className="col-sm-4 col-lg-4">
+                    <div className="col-sm-12 col-lg-4">
                         <div className="footer-col-title">Get in Touch</div>
                         <ul className="footer-links list-unstyled">
                             <li><i className="bi bi-telephone me-2" style={{ color: 'var(--green-primary)' }} /><a href="tel:1300000000">1300 XXX XXX</a></li>

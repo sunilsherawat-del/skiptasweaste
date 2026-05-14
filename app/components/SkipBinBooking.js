@@ -81,7 +81,7 @@ function SkipBinBooking() {
   };
 
   return (
-    <div className="book">
+    <div className="book wow animate__animated animate__fadeInUp">
       <div className="book__head mb-3">
         <h3 className="text-white">Book your skip</h3>
       </div>
@@ -89,23 +89,23 @@ function SkipBinBooking() {
       {/* Stepper */}
       <div className="stepper">
         <button className={`stepper__step ${step >= 1 ? "is-active" : ""}`}>
-          <span class="stepper__num">STEP 1</span>
-          <span class="stepper__label">Postcode</span>
+          <span className="stepper__num">STEP 1</span>
+          <span className="stepper__label">Postcode</span>
         </button>
 
         <button className={`stepper__step ${step >= 2 ? "is-active" : ""}`}>
-          <span class="stepper__num">STEP 2</span>
-          <span class="stepper__label">Waste Type</span>
+          <span className="stepper__num">STEP 2</span>
+          <span className="stepper__label">Waste Type</span>
         </button>
 
         <button className={`stepper__step ${step >= 3 ? "is-active" : ""}`}>
-          <span class="stepper__num">STEP 3</span>
-          <span class="stepper__label">Bin Size</span>
+          <span className="stepper__num">STEP 3</span>
+          <span className="stepper__label">Bin Size</span>
         </button>
 
         <button className={`stepper__step ${step >= 4 ? "is-active" : ""}`}>
-          <span class="stepper__num">STEP 4</span>
-          <span class="stepper__label">Date</span>
+          <span className="stepper__num">STEP 4</span>
+          <span className="stepper__label">Date</span>
         </button>
       </div>
 
@@ -151,8 +151,8 @@ function SkipBinBooking() {
               }`}
               onClick={() => selectWaste("General Waste")}
             >
-                <span><span class="chip__t">General Waste</span>
-                    <div class="chip__d">Household clean-outs</div>
+                <span><span className="chip__t">General Waste</span>
+                    <div className="chip__d">Household clean-outs</div>
                 </span>
             </button>
 
@@ -164,8 +164,8 @@ function SkipBinBooking() {
             >
 
                 <span>
-                    <span class="chip__t">Green Waste</span>
-                    <div class="chip__d">Branches, lawn, leaves</div>
+                    <span className="chip__t">Green Waste</span>
+                    <div className="chip__d">Branches, lawn, leaves</div>
                 </span>
             </button>
 
@@ -177,8 +177,8 @@ function SkipBinBooking() {
               }`}
               onClick={() => selectWaste("Construction Waste")}
             >
-                <span><span class="chip__t">Building Reno</span>
-                    <div class="chip__d">Tiles, plaster, timber</div>
+                <span><span className="chip__t">Building Reno</span>
+                    <div className="chip__d">Tiles, plaster, timber</div>
                 </span>
             </button>
 
@@ -191,8 +191,8 @@ function SkipBinBooking() {
               onClick={() => selectWaste("Mixed Heavy")}
             >
               
-                <span><span class="chip__t">Mixed Heavy</span>
-                    <div class="chip__d">Soil, brick, concrete</div>
+                <span><span className="chip__t">Mixed Heavy</span>
+                    <div className="chip__d">Soil, brick, concrete</div>
                 </span>
             </button>
           </div>

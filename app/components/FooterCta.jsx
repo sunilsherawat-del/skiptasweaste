@@ -6,8 +6,8 @@ export default function FooterCta() {
         <div className="row">
             <div className="col-12">
                 <div className="cta_home d-flex align-items-center px-md-3 py-40" style={{ background: 'url(../images/footerCtaBg.jpg) no-repeat center center/ cover', borderRadius: 28 }}>
-                    <img src="../images/ctaTank.png" alt="bin container" className="bin_container" />
-                    <div className="cta_caption medium_cta_caption text-left">
+                    <img src="../images/ctaTank.png" alt="bin container" className="bin_container wow animate__animated animate__fadeInUp" />
+                    <div className="cta_caption medium_cta_caption text-left wow animate__animated animate__fadeInDown">
                         <h2>Ready to book your skip bin?</h2>
                         <p>Whether you’re a homeowner or a contractor, our blog has you covered. Read practical guides and learn how to simplify your bin hire experience.</p>
                         <div className="btn_group d-flex align-items-center gap-3">

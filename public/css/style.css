@@ -319,7 +319,7 @@ a:hover, .btn:hover, .theme-btn:hover{
         top:12;
         left:0;
         right:0;
-        z-index:1;
+        z-index:9;
     }
     header{
         padding:0px 0;
@@ -419,7 +419,7 @@ a:hover, .btn:hover, .theme-btn:hover{
     background-blend-mode:overlay;
     padding:70px 0 100px;
     position:relative;
-    overflow:hidden;
+    overflow:clip;
     background-color:transparent;
     background-image:radial-gradient(at top center, #1e7ea1 0%, #04223a 100%);
 }
@@ -450,7 +450,7 @@ a:hover, .btn:hover, .theme-btn:hover{
       color: #d4f0e2;
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 62px);
+      font-size: clamp(2rem, 4.7vw, 62px);
       font-weight: 700;
       line-height: 1.15;
       margin-bottom: 18px;
@@ -1501,7 +1501,7 @@ a:hover, .btn:hover, .theme-btn:hover{
 
 .truck-animation .truckIcon{
   width:150px;
-  animation: bounce 0.8s ease-in-out infinite alternate;
+  /* animation: bounce 0.8s ease-in-out infinite alternate; */
 }
 
 /* Smooth realistic movement */
@@ -1536,6 +1536,17 @@ a:hover, .btn:hover, .theme-btn:hover{
     transform: translateY(-4px);
   }
 }
+.z-index {
+    z-index: 1;
+}
+
+.factsImages {
+    background: #fff;
+    box-shadow: 0 0 5px #d6d6d6;
+    border-radius: 20px;
+    padding: 40px;
+}
+
 /* .truck-animation .trashBag {
   max-width: 60px;
   position: absolute;
@@ -1579,3 +1590,43 @@ a:hover, .btn:hover, .theme-btn:hover{
     opacity: 0;
   }
 } */
+.factsImages {
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 5px #d6d6d6;
+    background: radial-gradient(ellipse at 50% 50%, #53b1fb 40%, #d4ecf7 100%);
+}
+.listFacts {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.listFacts li {
+    background: #f4f4f4;
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+    padding: 26px 22px 22px;
+    display: flex;
+    gap: 20px;
+}
+.listFacts li .Icon img {
+    max-width: 70px;
+}
+.listFacts li p {
+    margin: 0;
+    color: #212529bf;
+}
+.description p {
+    color: rgba(33, 37, 41, 0.75);
+}
+.tradie-img-wrap img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+.grayBg{
+    background: #f6fbf8
+}
+.breadcrumb li a, .breadcrumb li.active, .breadcrumb-item + .breadcrumb-item:before {
+    color: #fff;
+}

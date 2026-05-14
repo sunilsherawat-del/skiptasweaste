@@ -1,7 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../public/style.css";
-import "../public/responsive.css";
+import "../public/css/style.css";
+import "../public/css/responsive.css";
+
+import BootstrapClient from "./components/BootstrapClient";
 
 export const metadata = {
   title: "Skip Bin Taswaste",
@@ -26,7 +28,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body><BootstrapClient />{children}</body>
     </html>
   );
 }

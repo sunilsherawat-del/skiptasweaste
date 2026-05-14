@@ -58,7 +58,7 @@ export default function DeliveryAreas() {
     <div className="row g-4 align-items-center">
       {/* LEFT MAP */}
       <div className="col-lg-6">
-        <div className="map-visual position-relative">
+        <div className="map-visual position-relative wow animate__animated animate__fadeInUp">
           <i className="map-icon bi bi-map" />
 
           {/* ALL TAB */}
@@ -93,14 +93,14 @@ export default function DeliveryAreas() {
       {/* RIGHT SIDE */}
       <div className="col-lg-6">
         <h4
-          className="heading-font fw-bold mb-3"
+          className="heading-font fw-bold mb-3 wow animate__animated animate__fadeInUp"
           style={{ color: "var(--white)" }}
         >
           Delivery Areas
         </h4>
 
         {/* SEARCH INPUT */}
-        <div className="serachField">
+        <div className="serachField wow animate__animated animate__fadeInUp">
             <img src="/images/search.png" alt="Search" />
             <input
             type="text"
@@ -112,7 +112,7 @@ export default function DeliveryAreas() {
         </div>
 
         {/* AREA LIST */}
-        <ul className="area-list list-unstyled">
+        <ul className="area-list list-unstyled wow animate__animated animate__fadeInUp">
           {filteredCities.length > 0 ? (
             filteredCities.map((city, index) => (
               <li key={index} className="area-item">
