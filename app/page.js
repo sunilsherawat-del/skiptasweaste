@@ -1,10 +1,25 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Header from './components/Header';
 import Typewriter from './components/Typewriter';
 import SkipBinBooking from './components/SkipBinBooking';
 import Counter from './components/Counter';
+import CoverageCity from './components/CoverageCity';
+import FooterCta from './components/FooterCta';
+import Footer from './components/Footer';
+import Wow from "./components/Wow"
+
+import Accordion from 'react-bootstrap/Accordion';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 import Image from "next/image";
+import Link from "next/link";
+
 import ChooseImg from "../public/Images/chooseImg.webp";
 import mapIcon from "../public/Images/map.png";
 import wasteIcon from "../public/Images/waste-bin.png";
@@ -16,20 +31,6 @@ import SameDaypickup from "../public/Images/sameDaypickup.png";
 import LocallTeam from "../public/Images/choose_list_img3.png";
 import EcoFriendly from "../public/Images/choose_list_img2.png";
 import BookOnline from "../public/Images/choose_list_img1.png";
-import CoverageCity from './components/CoverageCity';
-import FooterCta from './components/FooterCta';
-import Footer from './components/Footer';
-import Accordion from 'react-bootstrap/Accordion';
-import WOW from "wowjs";
-import "animate.css";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import Link from "next/link";
-
 
 export default function Home() {
 
@@ -49,12 +50,6 @@ export default function Home() {
   // Animation values
   const scale = 1.05 + scrollY * 0.0005;
   const opacity = Math.max(0.15, 0.2 - scrollY * 0.0004);
-
-  useEffect(() => {
-    new WOW.WOW({
-      live: false
-    }).init();
-  }, []);
 
   const blogData = [
     {
@@ -88,6 +83,7 @@ export default function Home() {
 
   return (
     <div className="pageContent">
+      <Wow />
       <Header />
       <div className='pageWraper'>
         <section className="hero bannerSection" id="home">
