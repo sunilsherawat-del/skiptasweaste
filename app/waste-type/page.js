@@ -9,11 +9,12 @@ import Footer from '../components/Footer';
 import dynamic from "next/dynamic";
 
 const SkipBinBooking = dynamic(
-  () => import("../components/SkipBinBooking"),
-  { ssr: false }
+    () => import("../components/SkipBinBooking"),
+    { ssr: false }
 );
 
 import "../waste-type/style.css";
+import Link from "next/link";
 
 const page = () => {
     return (
@@ -40,65 +41,142 @@ const page = () => {
                     </div>
                 </section>
 
-                <section className="waste-section bg-white">
+                <section className="waste-section bg-white pb-4">
                     <div className="container">
-                        <div className="text-center wow animate__animated animate__fadeInUp">
+                        <div className="text-center wow animate__animated animate__fadeInUp mb-40">
                             <div className="section-label">Accepted Waste</div>
-                            <h2 className="section-title mt-1">What You Can Put</h2>
+                            <h2 className="section-title mt-1">What Goes In the Skip?</h2>
                             <p className="text-muted mx-auto" style={{ maxWidth: 520 }}>
                                 We accept most household and commercial waste. Some items need special arrangements — check below.
                             </p>
-                            <img src='../images/bins-category.png' alt='img' className='wasteCategory mt-md-4 img-fluid wow animate__animated animate__fadeInUp' />
                         </div>
-                        <div className="row g-4">
-                            <div className="col-md-4">
-                                <div className="waste-col-title green wow animate__animated animate__fadeInUp">
-                                    <i className="bi bi-check-circle-fill" /> Generally Accepted
+                        <div className="row row-gap-4">
+                            <div className="col-12 col-md-6 col-lg-4">
+                                <div className="service-item">
+                                    <div className="imgService">
+                                        <img src="../images/generalWaste.jpg" alt="service" className="img-fluid" />
+                                    </div>
+                                    <div className="title mb-3 px-3">
+                                        <h3>General Waste</h3>
+                                        <p>Accepting the general waste including light domestic waste from home and offices that are permitted in general waste skip bins</p>
+                                        <Link href="waste-type/general-waste" className="theme-btn rounded-3">View More <i class="bi bi-arrow-right-short"></i></Link>
+                                    </div>
                                 </div>
-                                <ul className="waste-list list-unstyled">
-                                    <li><i className="bi bi-check-circle-fill ok" />General household rubbish</li>
-                                    <li><i className="bi bi-check-circle-fill ok" />Green waste &amp; garden waste</li>
-                                    <li><i className="bi bi-check-circle-fill ok" />Timber &amp; wood</li>
-                                    <li><i className="bi bi-check-circle-fill ok" />Furniture &amp; whitegoods</li>
-                                    <li><i className="bi bi-check-circle-fill ok" />Building &amp; demolition waste</li>
-                                    <li><i className="bi bi-check-circle-fill ok" />Cardboard &amp; paper</li>
-                                    <li><i className="bi bi-check-circle-fill ok" />Metal &amp; scrap</li>
-                                    <li><i className="bi bi-check-circle-fill ok" />Soil &amp; sand (heavy bins)</li>
-                                </ul>
                             </div>
-                            {/* Conditional */}
-                            <div className="col-md-4">
-                                <div className="waste-col-title blue wow animate__animated animate__fadeInUp">
-                                    <i className="bi bi-exclamation-circle-fill" /> Check With Us First
+                            <div className="col-12 col-md-6 col-lg-4">
+                                <div className="service-item">
+                                    <div className="imgService">
+                                        <img src="../images/greenWaste.jpg" alt="service" className="img-fluid" />
+                                    </div>
+                                    <div className="title mb-3 px-3">
+                                        <h3>Green Waste</h3>
+                                        <p>Waste with 100% green waste that includes small trees, branches, shrubs, grass, grass clippings, wings, and palm fronds</p>
+                                        <Link href="waste-type/general-waste" className="theme-btn rounded-3">View More <i class="bi bi-arrow-right-short"></i></Link>
+                                    </div>
                                 </div>
-                                <ul className="waste-list list-unstyled">
-                                    <li><i className="bi bi-exclamation-triangle-fill maybe" />Tyres (surcharge may apply)</li>
-                                    <li><i className="bi bi-exclamation-triangle-fill maybe" />Electronics &amp; e-waste</li>
-                                    <li><i className="bi bi-exclamation-triangle-fill maybe" />Mattresses (fee applies)</li>
-                                    <li><i className="bi bi-exclamation-triangle-fill maybe" />Plasterboard (segregated)</li>
-                                    <li><i className="bi bi-exclamation-triangle-fill maybe" />Commercial food waste</li>
-                                    <li><i className="bi bi-exclamation-triangle-fill maybe" />Light excavation materials</li>
-                                </ul>
                             </div>
-                            {/* Not Accepted */}
-                            <div className="col-md-4">
-                                <div className="waste-col-title red wow animate__animated animate__fadeInUp">
-                                    <i className="bi bi-x-circle-fill" /> Not Accepted
+                            <div className="col-12 col-md-6 col-lg-4">
+                                <div className="service-item">
+                                    <div className="imgService">
+                                        <img src="../images/mixedWaste.jpg" alt="service" className="img-fluid" />
+                                    </div>
+                                    <div className="title mb-3 px-3">
+                                        <h3>Mixed Waste</h3>
+                                        <p>Which means by hiring our skip bin Brisbane services, you help in making a cleaner and greener future.</p>
+                                        <Link href="waste-type/general-waste" className="theme-btn rounded-3">View More <i class="bi bi-arrow-right-short"></i></Link>
+                                    </div>
                                 </div>
-                                <ul className="waste-list list-unstyled">
-                                    <li><i className="bi bi-x-circle-fill no" />Asbestos</li>
-                                    <li><i className="bi bi-x-circle-fill no" />Liquid waste or oils</li>
-                                    <li><i className="bi bi-x-circle-fill no" />Hazardous chemicals</li>
-                                    <li><i className="bi bi-x-circle-fill no" />Paint in large quantities</li>
-                                    <li><i className="bi bi-x-circle-fill no" />Gas cylinders</li>
-                                    <li><i className="bi bi-x-circle-fill no" />Medical / biological waste</li>
-                                    <li><i className="bi bi-x-circle-fill no" />Batteries (large)</li>
-                                </ul>
+                            </div>
+                            <div className="col-12 col-md-6 col-lg-4">
+                                <div className="service-item">
+                                    <div className="imgService">
+                                        <img src="../images/mixedWaste.jpg" alt="service" className="img-fluid" />
+                                    </div>
+                                    <div className="title mb-3 px-3">
+                                        <h3>Soil & Dirt</h3>
+                                        <p>Which means by hiring our skip bin Brisbane services, you help in making a cleaner and greener future.</p>
+                                        <Link href="waste-type/general-waste" className="theme-btn rounded-3">View More <i class="bi bi-arrow-right-short"></i></Link>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-12 col-md-12 col-lg-8">
+                                <div className="py-40 rounded-4 h-sm-100 pb-md-0 overflow-hidden d-sm-flex justify-content-between" style={{background:'#0078d6 url(/images/ctaBg_img2.jpg) no-repeat center center / cover', backgroundBlendMode:'luminosity'}}>
+                                    <div className="cta_caption px-3 px-lg-4">
+                                        <h2>Need a Bin? Get a Quick Quote in Minutes.</h2>
+                                        <p>Hire a skip bin with Affordable Skips Bins for affordable, hassle-free service.</p>
+                                        <div className="btn_group d-flex align-items-center gap-3 mt-40">
+                                            <a href="#" className="theme-btn rounded-3">Book Now</a>
+                                        </div>
+                                    </div>
+                                    <div className="d-flex h-sm-100 align-items-end cta2_img text-end ms-auto">
+                                        <img src="/images/ctaImageBin.png" alt="bin container" style={{width:"350px", height:"fit-content"}} className="img-fluid ms-auto d-block" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                
+                <div className="mb-60 mt-40">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th style={{ backgroundColor: '#e6e6e6' }}>Waste Type</th>
+                                                <th style={{ backgroundColor: '#59b234', color: '#fff' }}><i aria-hidden="true" className="fas fa-check" /> Acceptable Items</th>
+                                                <th style={{ backgroundColor: '#ffbc00' }}><i aria-hidden="true" className="rt-elementor-icon icon-cancel" /> Non-Acceptable Items</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Green Waste</td>
+                                                <td>
+                                                    Tree stumps and logs, grass and flower cuttings, soil and turf, vegetable trimmings and vines and hedge trimmings, dried leaves
+                                                </td>
+                                                <td>
+                                                    Non-organic things like plastic and metals, large wood and branches, concrete, animal waste and flower pots, combustible
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>General Waste</td>
+                                                <td>
+                                                    Plastic waste, paper waste, tins and metals, ceramics and glass, organic waste, coffee cups or lids, plastic packaging, food wrappers, and cling film
+                                                </td>
+                                                <td>
+                                                    No building materials, recyclables, garden organics, and Hazardous wastes like flammable, toxic, corrosive, and reactive wastes
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Concrete / Bricks</td>
+                                                <td>
+                                                    Concrete, bricks or rubber waste, general construction wastes or devastation, soils, clean fills, crusher dust, scalps, roof tiles, bricks, pavers, and ceramic wall tiles
+                                                </td>
+                                                <td>
+                                                    Contaminated soil, green rubbish, grass, lead paint, and asbestos
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Heavy Waste</td>
+                                                <td>
+                                                    landscaping wastes, builders’ wastes, furniture and appliances, timber, metal and steel, bricks, tiles, and steel
+                                                </td>
+                                                <td>
+                                                    Liquid or hazardous wastes, sand, soil, clay or dirt, food wastes or products
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <section className="waste-facts grayBg py-80" id="waste">
                     <div className="container">
                         <div className="row row-gap-4">

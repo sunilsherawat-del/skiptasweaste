@@ -1,5 +1,5 @@
 "use client";
-
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import Header from './components/Header';
 import Typewriter from './components/Typewriter';
@@ -7,9 +7,7 @@ import Typewriter from './components/Typewriter';
 import CoverageCity from './components/CoverageCity';
 import FooterCta from './components/FooterCta';
 import Footer from './components/Footer';
-import Wow from "./components/Wow"
-
-import dynamic from "next/dynamic";
+import Wow from "./components/Wow";
 
 const SkipBinBooking = dynamic(
   () => import("./components/SkipBinBooking"),
@@ -485,60 +483,134 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="waste-section" id="waste">
+        <section className="waste-section swiperSlider" id="waste">
           <div className="container">
-            <div className="text-center wow animate__animated animate__fadeInUp">
+            <div className="text-center wow animate__animated animate__fadeInUp mb-40">
               <div className="section-label">Accepted Waste</div>
               <h2 className="section-title mt-1">What Goes In the Skip?</h2>
               <p className="text-muted mx-auto" style={{ maxWidth: 520 }}>
                 We accept most household and commercial waste. Some items need special arrangements — check below.
               </p>
-              <img src='../images/bins-category.png' alt='img' className='wasteCategory mt-md-4 img-fluid wow animate__animated animate__fadeInUp' />
             </div>
             <div className="row g-4">
-              <div className="col-md-4">
-                <div className="waste-col-title green wow animate__animated animate__fadeInUp">
-                  <i className="bi bi-check-circle-fill" /> Generally Accepted
-                </div>
-                <ul className="waste-list list-unstyled">
-                  <li><i className="bi bi-check-circle-fill ok" />General household rubbish</li>
-                  <li><i className="bi bi-check-circle-fill ok" />Green waste &amp; garden waste</li>
-                  <li><i className="bi bi-check-circle-fill ok" />Timber &amp; wood</li>
-                  <li><i className="bi bi-check-circle-fill ok" />Furniture &amp; whitegoods</li>
-                  <li><i className="bi bi-check-circle-fill ok" />Building &amp; demolition waste</li>
-                  <li><i className="bi bi-check-circle-fill ok" />Cardboard &amp; paper</li>
-                  <li><i className="bi bi-check-circle-fill ok" />Metal &amp; scrap</li>
-                  <li><i className="bi bi-check-circle-fill ok" />Soil &amp; sand (heavy bins)</li>
-                </ul>
-              </div>
-              {/* Conditional */}
-              <div className="col-md-4">
-                <div className="waste-col-title blue wow animate__animated animate__fadeInUp">
-                  <i className="bi bi-exclamation-circle-fill" /> Check With Us First
-                </div>
-                <ul className="waste-list list-unstyled">
-                  <li><i className="bi bi-exclamation-triangle-fill maybe" />Tyres (surcharge may apply)</li>
-                  <li><i className="bi bi-exclamation-triangle-fill maybe" />Electronics &amp; e-waste</li>
-                  <li><i className="bi bi-exclamation-triangle-fill maybe" />Mattresses (fee applies)</li>
-                  <li><i className="bi bi-exclamation-triangle-fill maybe" />Plasterboard (segregated)</li>
-                  <li><i className="bi bi-exclamation-triangle-fill maybe" />Commercial food waste</li>
-                  <li><i className="bi bi-exclamation-triangle-fill maybe" />Light excavation materials</li>
-                </ul>
-              </div>
-              {/* Not Accepted */}
-              <div className="col-md-4">
-                <div className="waste-col-title red wow animate__animated animate__fadeInUp">
-                  <i className="bi bi-x-circle-fill" /> Not Accepted
-                </div>
-                <ul className="waste-list list-unstyled">
-                  <li><i className="bi bi-x-circle-fill no" />Asbestos</li>
-                  <li><i className="bi bi-x-circle-fill no" />Liquid waste or oils</li>
-                  <li><i className="bi bi-x-circle-fill no" />Hazardous chemicals</li>
-                  <li><i className="bi bi-x-circle-fill no" />Paint in large quantities</li>
-                  <li><i className="bi bi-x-circle-fill no" />Gas cylinders</li>
-                  <li><i className="bi bi-x-circle-fill no" />Medical / biological waste</li>
-                  <li><i className="bi bi-x-circle-fill no" />Batteries (large)</li>
-                </ul>
+              <div className="col-12">
+                <Swiper
+                  modules={[Autoplay, Pagination]}
+                  spaceBetween={20}
+                  slidesPerView={3}
+                  navigation
+                  pagination={{ clickable: true }}
+                  breakpoints={{
+                    0: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1199: { slidesPerView: 3 },
+                  }}
+                  className="service-slider arrow-top wow fadeInLeft"
+                >
+                  {/* Slide 1 */}
+                  <SwiperSlide>
+                    <div className="service-item">
+                      <div className="imgService">
+                        <img src="../images/generalWaste.jpg" alt="service" className="img-fluid"  />
+                      </div>
+                      <div className="title mb-3 px-3">
+                        <h3>General Waste</h3>
+                        <p>suitable for light domestic and commercial waste</p>
+                      </div>
+
+                      <div className="service_list px-3">
+                        <h6>What you put in:</h6>
+                        <ul className="list-unstyled count-2 mb-0 put-list">
+                          <li>Light domestic waste</li>
+                          <li>Non-hazardous waste</li>
+                          <li>Light construction waste</li>
+                          <li>Office Waste</li>
+                          <li>Office Waste</li>
+                          <li>Office Waste</li>
+                        </ul>
+                      </div>
+
+                      <div className="service_list mt-4 px-3">
+                        <h6>What you can’t put in:</h6>
+                        <ul className="list-unstyled count-2 mb-0 put-list no-put-list">
+                          <li>Hazardous waste like asbestos</li>
+                          <li>Liquid waste</li>
+                          <li>Food waste</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+
+                  {/* Slide 2 */}
+                  <SwiperSlide>
+                    <div className="service-item">
+                      <div className="imgService">
+                        <img src="../images/greenWaste.jpg" alt="service" className="img-fluid"  />
+                      </div>
+                      <div className="title mb-3 px-3">
+                        <h3>Green Waste</h3>
+                        <p>Price based STRICTLY on cleanfill only</p>
+                      </div>
+
+                      <div className="service_list px-3">
+                        <h6>What you put in:</h6>
+                        <ul className="list-unstyled count-2 mb-0 put-list">
+                          <li>Grass</li>
+                          <li>Leaves</li>
+                          <li>Tree trimmings</li>
+                          <li>Small branches</li>
+                          <li>Weed</li>
+                          <li>Bark</li>
+                        </ul>
+                      </div>
+
+                      <div className="service_list mt-4 px-3">
+                        <h6>What you can’t put in:</h6>
+                        <ul className="list-unstyled count-2 mb-0 put-list no-put-list">
+                          <li>General waste</li>
+                          <li>Food waste</li>
+                          <li>Tree stumps</li>
+                          <li>Soil</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+
+                  {/* Slide 3 */}
+                  <SwiperSlide>
+                    <div className="service-item">
+                      <div className="imgService">
+                        <img src="../images/mixedWaste.jpg" alt="service" className="img-fluid"  />
+                      </div>
+                      <div className="title mb-3 px-3">
+                        <h3>Mixed waste</h3>
+                        <p>Price based STRICTLY on cleanfill only</p>
+                      </div>
+
+                      <div className="service_list px-3">
+                        <h6>What you put in:</h6>
+                        <ul className="list-unstyled count-2 mb-0 put-list">
+                          <li>Grass</li>
+                          <li>Leaves</li>
+                          <li>Tree trimmings</li>
+                          <li>Small branches</li>
+                          <li>Weed</li>
+                          <li>Bark</li>
+                        </ul>
+                      </div>
+
+                      <div className="service_list mt-4 px-3">
+                        <h6>What you can’t put in:</h6>
+                        <ul className="list-unstyled count-2 mb-0 put-list no-put-list">
+                          <li>General waste</li>
+                          <li>Food waste</li>
+                          <li>Tree stumps</li>
+                          <li>Soil</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </div>
           </div>

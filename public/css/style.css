@@ -1196,7 +1196,7 @@ a:hover, .btn:hover, .theme-btn:hover{
     }
  
     /* ── What Goes In ── */
-    .waste-section { padding: 70px 0; background: #f6fbf8; }
+    .waste-section { padding: 70px 0; background: #f3f3f3; }
     .waste-col-title {
       font-weight: 700;
       font-size: 20px;
@@ -1624,7 +1624,7 @@ a:hover, .btn:hover, .theme-btn:hover{
     object-fit: cover;
 }
 .grayBg{
-    background: #f6fbf8
+    background: #f3f3f3
 }
 .breadcrumb li a, .breadcrumb li.active, .breadcrumb-item + .breadcrumb-item:before {
     color: #fff;
@@ -1644,4 +1644,93 @@ a:hover, .btn:hover, .theme-btn:hover{
 .book-process-card{max-width:500px;margin:auto;border:0;background:0 0}
 .text-underline{
     text-decoration: underline;
+}
+
+.service-item {
+    background: #fff;
+    height: auto;
+    padding: 8px 8px 20px;
+    border-radius: 14px;
+}
+.title h3 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    margin-bottom: 15px;
+}
+.service-item p {
+    color: #585858;
+    line-height: 22px;
+}
+.service_list h6 {
+    color: #030202;
+    margin-bottom: 14px;
+}
+.column-3, .count-3 {
+    column-count: 3;
+}
+.column-2, .count-2{
+    column-count: 2;
+}
+.service_list ul li {
+    position: relative;
+    padding-left: 25px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: normal;
+    color: #585858;
+    margin-bottom: 10px;
+}
+.no-put-list li:before, .put-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: url(/images/check-mark.png) 0 0 / contain no-repeat;
+}
+.no-put-list li:before {
+    background: url(/images/cross.png) 0 0 / contain no-repeat;
+}
+.imgService {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.imgService img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.bg-white .service-item {
+    border: 1px solid #e9e9e9;
+}
+.table-responsive th {
+    background-color: #f4f4f4;
+    font-weight: 500;
+    color: #000;
+    font-size: 16px;
+}
+
+.table-responsive th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    text-align: left;
+}
+.cta2_img {
+    min-width: 350px;
+}
+.put-list li, .no-put-list li{
+    position: relative;
+    color: #585858;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+}
+.acceptedWaste ul li{
+    margin-bottom:14px;
 }

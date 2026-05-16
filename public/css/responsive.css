@@ -3,6 +3,12 @@
     height: 205px;
 }
 }
+@media screen and (min-width:576px){
+.h-sm-100{
+    height: 100%;
+}
+}
+
 
 @media screen and (max-width:1400px){
 .navbar-nav.menu{
@@ -167,6 +173,13 @@ header .navbar-brand{
 .cta_home .bin_container {
     max-width: 435px;
 }
+.cta2_img {
+    min-width: 215px;
+    width: 215px;
+}
+.cta2_img img {
+    width: 100% !important;
+}
 }
 
 @media screen and (max-width:991px){
@@ -241,6 +254,10 @@ header .menu-wrap li a {
 }
 .chooseImg img {
     max-height: 460px;
+}
+.cta2_img {
+    width: 150px;
+    min-width: 150px;
 }
 }
 
@@ -366,6 +383,9 @@ header .menu-wrap li a {
     padding: 20px 15px;
     gap: 12px;
 }
+.title h3{    
+    font-size: 28px;
+}
 }
 @media(max-width:375px){
 .theme-btn {
@@ -396,5 +416,11 @@ header .menu-wrap li a {
 }
 .listFacts li .Icon img {
     max-width: 60px;
+}
+.column-2, .count-2 {
+    column-count: 1;
+}
+.title h3{    
+    font-size: 26px;
 }
 }
