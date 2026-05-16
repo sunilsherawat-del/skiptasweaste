@@ -295,7 +295,7 @@ a:hover, .btn:hover, .theme-btn:hover{
       color: var(--blue-dark);
     }
  
-    .section-title {
+    .section-title, .section-title h1, .section-title h2 {
       font-size: clamp(1.5rem, 4vw, 54px);
       font-weight: 700;
       color: var(--text-dark);
@@ -1281,7 +1281,7 @@ a:hover, .btn:hover, .theme-btn:hover{
     }
     .blog-meta { font-size: 14px; color: var(--text-muted); }
 
-    .blog-section .swiper {
+    .blog-section .swiper, .swiperSlider .swiper{
         padding-bottom: 50px;
     }
 
@@ -1629,4 +1629,10 @@ a:hover, .btn:hover, .theme-btn:hover{
 }
 .breadcrumb li a, .breadcrumb li.active, .breadcrumb-item + .breadcrumb-item:before {
     color: #fff;
+}
+.orangeLightBg {
+    background: #fff7e2;
+}
+.binBx {
+    box-shadow: 0 0 2px rgb(0 0 0 / 12%);
 }

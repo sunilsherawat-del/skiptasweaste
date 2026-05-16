@@ -1,0 +1,127 @@
+.blog-description h3{
+    line-height:normal;
+    color:#030202;
+    font-weight:400;
+}
+.blog-description h4{
+    font-size:22px;
+    margin-bottom:12px;
+    line-height:normal;
+    color:#030202;
+    font-weight:400;
+}
+.blog-description ul{
+    list-style:none;
+    padding:0;
+    padding-left:5px;
+    margin:15px 0 25px;
+}
+.blog-description ul li{
+    position:relative;
+    display:flex;
+    gap:8px;
+    margin-bottom:15px;
+    color:#585858;
+    line-height:22px;
+}
+.blog-description ul li:before{
+    font-family: bootstrap-icons !important;
+    font-weight: normal !important;
+    content:"\F26B";
+    color:#ff6d2e;
+}
+.blog-description ul li a, .blog-description p a{
+    text-decoration:underline;
+    color:#ff6d2e;
+}
+.recent-post h5{
+    color:#ff6d2e;
+    font-weight:500;
+    font-size:20px;
+    line-height:100%;
+    font-family: "Inter", sans-serif;
+    margin-bottom:15px;
+}
+.recent-post li, .recent-post li a{
+    display:flex;
+    margin-bottom:20px;
+    gap:20px;
+    align-items:center;
+}
+.recent-post li > a{
+    margin-bottom:0;
+}
+.recent-post li img{
+    width:85px;
+    height:85px;
+    min-width:85px;
+    object-fit:cover;
+    border-radius:12px;
+}
+.rescent-caption span{
+    font-weight:400;
+    font-size:14px;
+    line-height: normal;
+    color: #5F5D62;
+    margin-bottom:10px;
+    display:block;
+}
+.rescent-caption p{
+    font-weight:400;
+    font-size:16px;
+    line-height:normal;
+    color:#161419;
+    margin:0;
+}
+.recent-post{
+    background:linear-gradient(180deg, #ffe3d7 0%, #FFFFFF 100%);
+    border-radius:20px;
+    padding:20px 24px;
+    box-shadow:0 2px 3px rgb(0 0 0 / 8%);
+    border:1px solid #f1f1f1;
+}
+.recent-post ul {
+    margin-bottom: 0;
+    max-height: 402px;
+    overflow: auto;
+}
+.recent-post li:last-child{
+    margin-bottom:0;
+}
+.blog-slidebar {
+    position: sticky;
+    top: 10px;
+}
+
+/*cta*/
+.cardCta {
+    padding: 25px;
+}
+.cta-title {
+    position: relative;
+    z-index: 1;
+}
+.cardCta .cta-title h3 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 45px;
+}
+.cta-title a {
+    position: relative;
+    background: #000000;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: -48px;
+    top: 25px;
+    font-size: 14px;
+    transition: all ease .3s;
+}
+.ctaImg {
+    text-align: right;
+    margin-top: -102px;
+    position: relative;
+    top: 18px;
+    right: -25px;
+}

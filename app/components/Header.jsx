@@ -7,7 +7,7 @@ export default function Header() {
         <nav className="navbar navbar-expand-lg p-0">
             <div className="container justify-contevnt-between align-items-center">
                 <div className='headerBar'>
-                    <a className="navbar-brand fw-bold wow fadeInDown" href="index.html"><img src="/images/Logo.png" alt="Logo" /></a>
+                    <a className="navbar-brand fw-bold wow fadeInDown" href="/"><img src="/images/Logo.png" alt="Logo" /></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <span className="navbar-toggler-icon" />
                     </button>
@@ -21,9 +21,9 @@ export default function Header() {
                                 <ul className="navbar-nav menu justify-content-center">
                                     <li className="nav-item active"><Link className="nav-link" href="/">Home</Link></li>
                                     <li className="nav-item"><Link className="nav-link" href="/about">About</Link></li>
-                                    <li className="nav-item"><Link className="nav-link" href="">Areas Served</Link></li>
-                                    <li className="nav-item"><Link className="nav-link" href="">Skip Sizes</Link></li>
-                                    <li className="nav-item"><Link className="nav-link" href="">Waste Types</Link></li>
+                                    <li className="nav-item"><Link className="nav-link" href="/area-served">Areas Served</Link></li>
+                                    <li className="nav-item"><Link className="nav-link" href="/skip-size">Skip Sizes</Link></li>
+                                    <li className="nav-item"><Link className="nav-link" href="/waste-type">Waste Types</Link></li>
                                     <li className="nav-item"><Link className="nav-link" href="/blog">Blog</Link></li>
                                     <li className="nav-item"><Link className="nav-link" href="/contact">Contact Us</Link></li>
                                 </ul>

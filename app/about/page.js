@@ -5,7 +5,7 @@ import Image from "next/image";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Header from '../components/Header';
 import SkipBinBooking from '../components/SkipBinBooking';
-import Counter from '../components/Counter';
+//import Counter from '../components/Counter';
 import FooterCta from '../components/FooterCta';
 import Footer from '../components/Footer';
 import "../about/style.css";
@@ -75,7 +75,7 @@ const page = () => {
                 </div>
                 </div>
             </section>
-            <div className="grayBg"><Counter /></div>
+            {/* <div className="grayBg"><Counter /></div> */}
             <section className="choose-section py-80">
                 <div className="container">
                     <div className="row">

@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import "animate.css";
 
-export default function Home() {
+export default function Wow() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       import("wowjs").then((WOWModule) => {

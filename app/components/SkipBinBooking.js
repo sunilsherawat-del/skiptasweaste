@@ -131,9 +131,7 @@ function SkipBinBooking() {
           <div className="book__row mt-4">
             <button className="theme-btn btn-sm rounded-3" onClick={nextStep}>
               Next
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14M13 5l7 7-7 7"></path>
-                </svg>
+              <i className="bi bi-arrow-right-short"></i>
             </button>
           </div>
         </div>
@@ -199,14 +197,12 @@ function SkipBinBooking() {
 
           <div className="book__row mt-4">
             <button className="theme-btn bg-white btn-sm rounded-3" onClick={prevStep}>
-              ← Back
+              <i className="bi bi-arrow-left-short"></i> Back
             </button>
 
             <button className="theme-btn btn-sm rounded-3" onClick={nextStep}>
               Next
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14M13 5l7 7-7 7"></path>
-                </svg>
+              <i className="bi bi-arrow-right-short"></i>
             </button>
           </div>
         </div>
@@ -233,14 +229,12 @@ function SkipBinBooking() {
 
           <div className="book__row mt-4">
             <button className="theme-btn bg-white btn-sm rounded-3" onClick={prevStep}>
-              ← Back
+              <i className="bi bi-arrow-left-short"></i> Back
             </button>
 
             <button className="theme-btn btn-sm rounded-3" onClick={nextStep}>
               Next
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14M13 5l7 7-7 7"></path>
-                </svg>
+              <i className="bi bi-arrow-right-short"></i>
             </button>
           </div>
         </div>
@@ -304,7 +298,7 @@ function SkipBinBooking() {
 
           <div className="book__row mt-4">
             <button className="theme-btn bg-white btn-sm rounded-3" onClick={prevStep}>
-              ← Back
+              <i className="bi bi-arrow-left-short"></i> Back
             </button>
 
             <button

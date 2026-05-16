@@ -3,7 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 
 export const metadata = {
-  title: "Contact Us",
+  title: "Blog",
   description: "SKIP BIN HIRE - TASMANIA",
 };
 

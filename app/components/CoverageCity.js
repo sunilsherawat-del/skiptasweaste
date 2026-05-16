@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useMemo, useState } from "react";
 
 const deliveryData = [
@@ -55,7 +56,7 @@ export default function DeliveryAreas() {
   }, [activeRegion, search]);
 
   return (
-    <div className="row g-4 align-items-center">
+    <div className="row g-4">
       {/* LEFT MAP */}
       <div className="col-lg-6">
         <div className="map-visual position-relative wow animate__animated animate__fadeInUp">
@@ -116,8 +117,7 @@ export default function DeliveryAreas() {
           {filteredCities.length > 0 ? (
             filteredCities.map((city, index) => (
               <li key={index} className="area-item">
-                <i className="bi bi-geo-alt" />
-                {city}
+                <Link  href="/area-served/hobart"><i className="bi bi-geo-alt" />{city}</Link>
               </li>
             ))
           ) : (

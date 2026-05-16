@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Header from './components/Header';
 import Typewriter from './components/Typewriter';
 import SkipBinBooking from './components/SkipBinBooking';
-import Counter from './components/Counter';
+//import Counter from './components/Counter';
 import CoverageCity from './components/CoverageCity';
 import FooterCta from './components/FooterCta';
 import Footer from './components/Footer';
@@ -53,31 +53,34 @@ export default function Home() {
 
   const blogData = [
     {
+      Image: "/images/skipbin_img.png",
       category: "Tips & Guides",
       title: "How to Choose the Right Skip Bin Size for Your Renovation",
       paragraph: "Picking between a 4m³ and 6m³? Here's a quick way to estimate before you book.",
       date: "3 May 2025",
       read: "4 min read",
       icon: "bi-calendar-check",
-      link: "/blog-detail",
+      url: "tips-guides",
     },
     {
+      Image: "/images/skipbin_img.png",
       category: "Sustainability",
       title: "Does Stuff Actually Get Recycled When You Hire a Skip Bin?",
       paragraph: "Picking between a 4m³ and 6m³? Here's a quick way to estimate before you book.",
       date: "18 Apr 2025",
       read: "5 min read",
       icon: "bi-recycle",
-      link: "/blog-detail",
+      url: "/blog-detail",
     },
     {
+      Image: "/images/skipbin_img.png",
       category: "Tradie Tips",
       title: "3 Time-Saving Tips When Booking a Skip for a Building Job",
       paragraph: "Picking between a 4m³ and 6m³? Here's a quick way to estimate before you book.",
       date: "2 Apr 2025",
       read: "3 min read",
       icon: "bi-tools",
-      link: "/blog-detail",
+      url: "/blog-detail",
     },
   ];
 
@@ -121,7 +124,7 @@ export default function Home() {
           </div>
         </section>
 
-        <Counter />
+        {/* <Counter /> */}
 
         <section className="bins-section" id="bins">
           <div className="container">
@@ -572,7 +575,7 @@ export default function Home() {
                     <SwiperSlide key={index}>
                       <div className="blog-card">
                         <div className="blog-img">
-                          <img src="../images/skipbin_img.png" alt="blog" />
+                          <img src={blog.Image} alt="blog" />
                         </div>
 
                         <div className="blog-body">
@@ -584,7 +587,7 @@ export default function Home() {
                           <div className="blog-cat">{blog.category}</div>
                           <div className="blog-title">{blog.title}</div>
                           <div className="blog-description">{blog.paragraph}</div>
-                          <Link href={blog.link} className="theme-btn rounded-3 mt-4 btn-sm">Read More <i className="bi bi-arrow-right"></i></Link>
+                          <Link href={`/blog/${blog.url}`} className="theme-btn rounded-3 mt-4 btn-sm">Read More <i className="bi bi-arrow-right"></i></Link>
                         </div>
                       </div>
                     </SwiperSlide>

@@ -1,0 +1,27 @@
+.area-served h4 {
+    color: #000 !important;
+}
+.area-item {
+    color: #ff6d2e;
+    background: transparent;
+    border: 1px solid #ff6d2e;
+}
+.area-item i {
+    color: #ff6d2e;
+}
+.area-item:hover{
+    color: #fff;
+    background: #ff6d2e;
+}
+.area-item a {
+    color: #ff6d2e;
+}
+.area-item:hover i, .area-item:hover a{
+    color: #fff;
+}
+.binSize .swiper {
+    padding: 10px 0;
+}
+.swiperSlider .swiper {
+    padding-bottom: 50px;
+}
