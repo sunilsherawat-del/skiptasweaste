@@ -3,10 +3,17 @@ import { useEffect, useState } from "react";
 import React from 'react'
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Header from '../components/Header';
-import SkipBinBooking from '../components/SkipBinBooking';
 import CoverageCity from '../components/CoverageCity';
 import FooterCta from '../components/FooterCta';
 import Footer from '../components/Footer';
+
+import dynamic from "next/dynamic";
+
+const SkipBinBooking = dynamic(
+  () => import("../components/SkipBinBooking"),
+  { ssr: false }
+);
+
 import "../area-served/area.css";
 
 const page = () => {

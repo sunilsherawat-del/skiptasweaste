@@ -1,10 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
 import React from 'react'
 import Image from "next/image";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Header from '../components/Header';
-import SkipBinBooking from '../components/SkipBinBooking';
 //import Counter from '../components/Counter';
 import FooterCta from '../components/FooterCta';
 import Footer from '../components/Footer';
@@ -14,6 +12,13 @@ import SameDaypickup from "../../public/Images/sameDaypickup.png";
 import LocallTeam from "../../public/Images/choose_list_img3.png";
 import EcoFriendly from "../../public/Images/choose_list_img2.png";
 import BookOnline from "../../public/Images/choose_list_img1.png";
+
+import dynamic from "next/dynamic";
+
+const SkipBinBooking = dynamic(
+  () => import("../components/SkipBinBooking"),
+  { ssr: false }
+);
 
 const page = () => {
   return (
@@ -76,7 +81,7 @@ const page = () => {
                 </div>
             </section>
             {/* <div className="grayBg"><Counter /></div> */}
-            <section className="choose-section py-80">
+            <section className="choose-section grayBg py-80 mb-4">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">

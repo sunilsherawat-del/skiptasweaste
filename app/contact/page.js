@@ -5,9 +5,16 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Header from '../components/Header';
-import SkipBinBooking from '../components/SkipBinBooking';
 import FooterCta from '../components/FooterCta';
 import Footer from '../components/Footer';
+
+import dynamic from "next/dynamic";
+
+const SkipBinBooking = dynamic(
+  () => import("../components/SkipBinBooking"),
+  { ssr: false }
+);
+
 import "../contact/style.css";
 import Link from "next/link";
 

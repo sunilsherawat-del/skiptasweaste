@@ -808,12 +808,11 @@ a:hover, .btn:hover, .theme-btn:hover{
       transition: transform .25s, box-shadow .25s, border-color .25s;
       height: 100%;
     }
-    .bin-card:hover {
+    .bin-card:hover{
       transform: translateY(-6px);
       box-shadow: 0 16px 40px rgba(46,125,82,.12);
-      border-color: #ffcf4e;
     }
-    .bin-card.featured {
+    .bin-card.featured{
       border-color: #ffcf4e;
       box-shadow: 0 8px 28px rgba(46,125,82,.15);
     }
@@ -1635,4 +1634,14 @@ a:hover, .btn:hover, .theme-btn:hover{
 }
 .binBx {
     box-shadow: 0 0 2px rgb(0 0 0 / 12%);
+}
+.prohibited-material img{max-width:100%;width:82px;margin-bottom:15px}
+.prohibited-material h3{text-align:center;font-weight:700;margin:10px 0 0}
+.prohibited-material small{text-align:center;display:block;margin-bottom:15px;color:#226bae;font-weight:500}
+.prohibited-material ul li{margin-bottom:10px}
+#material .modal-dialog{max-width:630px}
+.prohibited-material{padding:0 25px}
+.book-process-card{max-width:500px;margin:auto;border:0;background:0 0}
+.text-underline{
+    text-decoration: underline;
 }

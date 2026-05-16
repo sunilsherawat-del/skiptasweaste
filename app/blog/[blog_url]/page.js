@@ -5,10 +5,16 @@ import React from 'react'
 import Link from "next/link";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Header from '../../components/Header';
-import SkipBinBooking from '../../components/SkipBinBooking';
 import FooterCta from '../../components/FooterCta';
 import Footer from '../../components/Footer';
 import "../../blog/style.css";
+
+import dynamic from "next/dynamic";
+
+const SkipBinBooking = dynamic(
+  () => import("../../components/SkipBinBooking"),
+  { ssr: false }
+);
 
 const page = () => {
     return (

@@ -3,12 +3,18 @@
 import { useEffect, useState } from "react";
 import Header from './components/Header';
 import Typewriter from './components/Typewriter';
-import SkipBinBooking from './components/SkipBinBooking';
 //import Counter from './components/Counter';
 import CoverageCity from './components/CoverageCity';
 import FooterCta from './components/FooterCta';
 import Footer from './components/Footer';
 import Wow from "./components/Wow"
+
+import dynamic from "next/dynamic";
+
+const SkipBinBooking = dynamic(
+  () => import("./components/SkipBinBooking"),
+  { ssr: false }
+);
 
 import Accordion from 'react-bootstrap/Accordion';
 
@@ -97,7 +103,7 @@ export default function Home() {
               opacity: opacity,
             }}
           />
-          <div className="container position-relative z-index">
+          <div className="container position-relative">
             <div className="row align-items-center row-gap-4">
               <div className="col-lg-6">
                 <div className="hero-badge wow animate__animated animate__fadeInUp"><i className="bi bi-award-fill me-1" /> Tasmania's #1 Skip Bin Provider</div>
@@ -669,7 +675,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="col-lg-7">
-                <div className="description">
+                <div className="description wow animate__animated animate__fadeInUp">
                   <p>Australia generates over 75 million tonnes of solid waste annually—roughly 2.88 tonnes per capita—with a 58% recycling rate, yet relies heavily on landfills. Key waste streams include construction and demolition 44%, organics 19%, and hazardous materials.</p>
 
                   <ul className="list-unstyled listFacts mt-40">
